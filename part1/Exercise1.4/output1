@@ -1,0 +1,17 @@
+sudo docker exec -it relaxed_jackson tail -f ./logs.txt
+Fri, 30 Oct 2020 14:09:24 GMT
+Fri, 30 Oct 2020 14:09:27 GMT
+Fri, 30 Oct 2020 14:09:30 GMT
+Fri, 30 Oct 2020 14:09:33 GMT
+Secret message is:
+"Docker is easy"
+Fri, 30 Oct 2020 14:09:39 GMT
+Fri, 30 Oct 2020 14:09:42 GMT
+Fri, 30 Oct 2020 14:09:45 GMT
+Fri, 30 Oct 2020 14:09:48 GMT
+Secret message is:
+"Docker is easy"
+Fri, 30 Oct 2020 14:09:54 GMT
+Fri, 30 Oct 2020 14:09:57 GMT
+Fri, 30 Oct 2020 14:10:00 GMT
+Fri, 30 Oct 2020 14:10:03 GMT

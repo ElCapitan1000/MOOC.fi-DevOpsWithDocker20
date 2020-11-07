@@ -1,0 +1,25 @@
+$ sudo docker build -t curler .
+Sending build context to Docker daemon  3.072kB
+Step 1/5 : FROM ubuntu:16.04
+ ---> dfeff22e96ae
+Step 2/5 : WORKDIR /mydir
+ ---> Using cache
+ ---> 3190f96dbf3c
+Step 3/5 : COPY local.sh .
+ ---> Using cache
+ ---> c65026606434
+Step 4/5 : RUN apt-get update && apt-get install -y curl
+ ---> Running in 50f90f5a12a4
+
+$ sudo docker run -it curler
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+

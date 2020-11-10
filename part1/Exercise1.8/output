@@ -1,0 +1,10 @@
+[ElCapitan@PC192 Exercise1.8]$ mkdir usr
+[ElCapitan@PC192 Exercise1.8]$ mkdir usr/app
+[ElCapitan@PC192 Exercise1.8]$ touch usr/app/logs.txt
+
+[ElCapitan@PC192 Exercise1.8]$ sudo docker run -v $(pwd)/usr/app/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+

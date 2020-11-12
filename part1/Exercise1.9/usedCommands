@@ -1,0 +1,5 @@
+[ElCapitan@PC192 Exercise1.9]$ sudo docker run -d -p 1234:80 devopsdockeruh/ports_exercise
+cfda888d10e59e51dc1280a19f59d896e955e550f869a327ed30c935b5f2a24f
+[ElCapitan@PC192 Exercise1.9]$ curl http://localhost:1234
+Ports configured correctly!![ElCapitan@PC192 Exercise1.9]$ 
+

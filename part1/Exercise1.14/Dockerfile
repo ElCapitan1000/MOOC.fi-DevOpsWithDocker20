@@ -13,6 +13,9 @@ RUN bundle install
 
 ENV RAILS_LOG_TO_STDOUT true
 
+RUN rm /mydir/config/credentials.yml.enc
+RUN EDITOR=vi rails credentials:edit
+
 RUN rails db:migrate RAILS_ENV=production && \
 rake assets:precompile 
 CMD ["rails", "s", "-e", "production"]

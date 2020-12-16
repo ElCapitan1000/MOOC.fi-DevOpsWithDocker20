@@ -1,0 +1,5 @@
+My favorite programing language is C++.
+I created a image from a gcc docker image, https://hub.docker.com/_/gcc.
+In the docker file i create a simple cpp program called myApp.cpp, compile and run it.
+You can compile a cpp program inside the container with 'g++ -o myApp myApp.cpp' and run it with './myApp'.
+

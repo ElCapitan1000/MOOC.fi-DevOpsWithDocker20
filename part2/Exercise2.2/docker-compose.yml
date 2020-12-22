@@ -1,6 +1,6 @@
 version: "3.9"
 services:
   ports_exercise: 
-    build: . 
+    image: devopsdockeruh/ports_exercise
     ports:
       - 80:80

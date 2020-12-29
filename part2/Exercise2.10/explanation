@@ -1,3 +1,2 @@
-I changed the environment variable for the backend FRONT_URL=http://localhost 
-and for the frontend API_URL=http://localhost/api/
-
+I changed the environment variable for the backend to FRONT_URL=http://localhost 
+and for the frontend to API_URL=http://localhost/api/

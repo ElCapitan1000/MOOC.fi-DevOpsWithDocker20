@@ -1,4 +1,7 @@
-- credentials.yml.enc will be deleted in the container see Dockerfile
-- new credentials will be created in the container see Dockerfile
+I had to delete and create the file "credentials.yml.enc" to run the project, see Dockerfile.
 
+[ElCapitan@PC192 Exercise1.14]$ sudo docker run -it -p 3000:3000 rails-app
+=> Booting Puma
+=> Rails 5.2.2.1 application starting in production 
+=> Run `rails server -h` for more startup options
 

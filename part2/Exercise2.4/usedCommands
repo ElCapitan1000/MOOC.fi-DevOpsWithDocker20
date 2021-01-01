@@ -1,6 +1,0 @@
-[ElCapitan@PC192 scaling-exercise]$ sudo docker-compose up --scale compute=3
-calculator is up-to-date
-load-balancer is up-to-date
-Creating scaling-exercise_compute_2 ... done
-Creating scaling-exercise_compute_3 ... done
-Attaching to calculator, load-balancer, scaling-exercise_compute_1, scaling-exercise_compute_3, scaling-exercise_compute_2

@@ -1,0 +1,93 @@
+The image size for frontend changed from 755MB to 493MB.
+The image size for backend changed from 329MB to 299MB.
+
+
+===================================================================================================================
+			Before optimisation
+===================================================================================================================
+sudo docker history npm-frontend
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+aad1203f298f        16 seconds ago      /bin/sh -c #(nop)  CMD ["start"]                0B                  
+ff13015194f3        16 seconds ago      /bin/sh -c #(nop)  ENTRYPOINT ["npm"]           0B                  
+e3357f8e7bb9        17 seconds ago      /bin/sh -c apt-get update && apt-get install…   624MB               
+a7228f4e82d3        3 minutes ago       /bin/sh -c #(nop) COPY dir:417a0ea120960624d…   921kB               
+70ee12442815        3 minutes ago       /bin/sh -c #(nop) WORKDIR /mydir                0B                  
+42def62dfd30        3 minutes ago       /bin/sh -c #(nop)  EXPOSE 5000                  0B                  
+c34added6052        3 minutes ago       /bin/sh -c #(nop)  ENV API_URL=http://localh…   0B                  
+dfeff22e96ae        2 months ago        /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           2 months ago        /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B                  
+<missing>           2 months ago        /bin/sh -c rm -rf /var/lib/apt/lists/*          0B                  
+<missing>           2 months ago        /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B                
+<missing>           2 months ago        /bin/sh -c #(nop) ADD file:c1f3147c7b6710af5…   131MB  
+
+[ElCapitan@PC192 backend]$ sudo docker history npm-backend
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+b94fee993b9d        18 seconds ago      /bin/sh -c #(nop)  CMD ["start"]                0B                  
+e80ee7be9a63        18 seconds ago      /bin/sh -c #(nop)  ENTRYPOINT ["npm"]           0B                  
+075f047d2862        19 seconds ago      /bin/sh -c apt-get update && apt-get install…   199MB               
+c932b1e16599        57 seconds ago      /bin/sh -c #(nop) COPY dir:8d65e7a19a97a7ac8…   231kB               
+5efdee6903a5        57 seconds ago      /bin/sh -c #(nop) WORKDIR /mydir                0B                  
+c2d3130b9ecf        57 seconds ago      /bin/sh -c #(nop)  EXPOSE 8000                  0B                  
+9ad68a25179b        57 seconds ago      /bin/sh -c #(nop)  ENV FRONT_URL=http://loca…   0B                  
+dfeff22e96ae        2 months ago        /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           2 months ago        /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B                  
+<missing>           2 months ago        /bin/sh -c rm -rf /var/lib/apt/lists/*          0B                  
+<missing>           2 months ago        /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B                
+<missing>           2 months ago        /bin/sh -c #(nop) ADD file:c1f3147c7b6710af5…   131MB  
+
+    
+[ElCapitan@PC192 backend]$ sudo docker image ls -a
+REPOSITORY                             TAG                 IMAGE ID            CREATED              SIZE
+npm-backend                            latest              b94fee993b9d        51 seconds ago       329MB
+<none>                                 <none>              e80ee7be9a63        51 seconds ago       329MB
+<none>                                 <none>              075f047d2862        52 seconds ago       329MB
+<none>                                 <none>              5efdee6903a5        About a minute ago   131MB
+<none>                                 <none>              c2d3130b9ecf        About a minute ago   131MB
+<none>                                 <none>              c932b1e16599        About a minute ago   131MB
+<none>                                 <none>              9ad68a25179b        About a minute ago   131MB
+<none>                                 <none>              ff13015194f3        4 minutes ago        755MB
+npm-frontend                           latest              aad1203f298f        4 minutes ago        755MB
+
+
+===================================================================================================================
+			After optimisation
+===================================================================================================================
+[ElCapitan@PC192 frontend]$ sudo docker history npm-frontend-small
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+e5b8e5101e0d        56 seconds ago      /bin/sh -c #(nop)  CMD ["start"]                0B                  
+0a140961057c        56 seconds ago      /bin/sh -c #(nop)  ENTRYPOINT ["npm"]           0B                  
+e5b6c297aad7        57 seconds ago      /bin/sh -c apt-get update && apt-get install…   362MB               
+a7228f4e82d3        44 minutes ago      /bin/sh -c #(nop) COPY dir:417a0ea120960624d…   921kB               
+70ee12442815        44 minutes ago      /bin/sh -c #(nop) WORKDIR /mydir                0B                  
+42def62dfd30        44 minutes ago      /bin/sh -c #(nop)  EXPOSE 5000                  0B                  
+c34added6052        44 minutes ago      /bin/sh -c #(nop)  ENV API_URL=http://localh…   0B                  
+dfeff22e96ae        2 months ago        /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           2 months ago        /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B                  
+<missing>           2 months ago        /bin/sh -c rm -rf /var/lib/apt/lists/*          0B                  
+<missing>           2 months ago        /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B                
+<missing>           2 months ago        /bin/sh -c #(nop) ADD file:c1f3147c7b6710af5…   131MB          
+   
+[ElCapitan@PC192 backend]$ sudo docker history npm-backend-small
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+e196e9ce47d6        17 seconds ago      /bin/sh -c #(nop)  CMD ["start"]                0B                  
+d8e25597c1ba        17 seconds ago      /bin/sh -c #(nop)  ENTRYPOINT ["npm"]           0B                  
+a4e3a4e7d518        18 seconds ago      /bin/sh -c apt-get update && apt-get install…   168MB               
+c932b1e16599        27 minutes ago      /bin/sh -c #(nop) COPY dir:8d65e7a19a97a7ac8…   231kB               
+5efdee6903a5        27 minutes ago      /bin/sh -c #(nop) WORKDIR /mydir                0B                  
+c2d3130b9ecf        27 minutes ago      /bin/sh -c #(nop)  EXPOSE 8000                  0B                  
+9ad68a25179b        27 minutes ago      /bin/sh -c #(nop)  ENV FRONT_URL=http://loca…   0B                  
+dfeff22e96ae        2 months ago        /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           2 months ago        /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B                  
+<missing>           2 months ago        /bin/sh -c rm -rf /var/lib/apt/lists/*          0B                  
+<missing>           2 months ago        /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B                
+<missing>           2 months ago        /bin/sh -c #(nop) ADD file:c1f3147c7b6710af5…   131MB  
+
+          
+[ElCapitan@PC192 frontend]$ sudo docker image ls -a
+REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
+npm-frontend-small                     latest              e5b8e5101e0d        2 minutes ago       493MB
+<none>                                 <none>              0a140961057c        2 minutes ago       493MB
+<none>                                 <none>              e5b6c297aad7        2 minutes ago       493MB
+<none>                                 <none>              d8e25597c1ba        12 minutes ago      299MB
+npm-backend-small                      latest              e196e9ce47d6        12 minutes ago      299MB
+

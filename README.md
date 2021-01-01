@@ -1,4 +1,4 @@
 # MOOC.fi-DevOpsWithDocker20
 
 Exercises for part3:
-- used docker/docker-compose commands for some exercises are in the file "usedCommands"
+- Going to finish all exercises 

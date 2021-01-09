@@ -15,7 +15,7 @@ RUN apt-get install -y docker-ce
 RUN git --version && docker --version
 
 # search the error here
-COPY app-to-build .
+COPY script.sh .
 
 RUN ls -l
 

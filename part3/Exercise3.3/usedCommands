@@ -1,0 +1,2 @@
+sudo docker run -it -v /var/run/docker.sock:/var/run/docker.sock app-exercise3.2 a b c d
+

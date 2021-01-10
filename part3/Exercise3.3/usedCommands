@@ -1,2 +1,7 @@
-sudo docker run -it -v /var/run/docker.sock:/var/run/docker.sock app-exercise3.2 a b c d
+[ElCapitan@PC192 Exercise3.3]$ sudo docker build -t buildjob-for-exercise3.3 .
+
+[ElCapitan@PC192 Exercise3.3]$ sudo docker run -it -v /var/run/docker.sock:/var/run/docker.sock buildjob-for-exercise3.3 <your docker id> <your docker password> app-from-buildjob-for-exercise3.3
+
+[ElCapitan@PC192 Exercise3.3]$ sudo docker run -it -p 5000:5000 app-from-buildjob-for-exercise3.3
+
 

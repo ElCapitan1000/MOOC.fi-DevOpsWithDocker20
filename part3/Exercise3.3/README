@@ -1,0 +1,8 @@
+For this exercise i wrote a buildjob for the frontend application  https://github.com/docker-hy/frontend-example-docker.
+
+The buildjob will download the app to build from https://github.com/ElCapitan1000/app-for-exercise3.3.
+The repository consists of the frontend-example-docker and the Dockerfile to build the frontend-example-docker.
+
+To run this exercise clone https://github.com/ElCapitan1000/MOOC.fi-DevOpsWithDocker20/tree/part3/part3/Exercise3.3 and see usedCommands.
+
+The image is published under https://hub.docker.com/repository/docker/elcapitan1000/app-from-buildjob-for-exercise3.3

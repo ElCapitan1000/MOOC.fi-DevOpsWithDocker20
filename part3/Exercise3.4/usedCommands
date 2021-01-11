@@ -1,0 +1,98 @@
+[ElCapitan@PC192 Exercise3.4]$ sudo docker-compose up --build
+Building frontend
+Step 1/11 : FROM ubuntu:16.04
+ ---> dfeff22e96ae
+Step 2/11 : WORKDIR /mydir
+ ---> Using cache
+ ---> aeacdfeffdd9
+Step 3/11 : COPY frontend-example-docker .
+ ---> Using cache
+ ---> b8104ec32530
+Step 4/11 : RUN apt-get update && apt-get install -y curl && apt-get install -y npm && curl -sL https://deb.nodesource.com/setup_10.x | bash && apt-get install -y nodejs && npm install && useradd -m app
+ ---> Using cache
+ ---> 5b2ff5e8a627
+Step 5/11 : RUN chown -R app /mydir
+ ---> Running in 052cb202ff2b
+Removing intermediate container 052cb202ff2b
+ ---> 3d431355a018
+Step 6/11 : USER app
+ ---> Running in a52f0098e097
+Removing intermediate container a52f0098e097
+ ---> 2a24ea397351
+Step 7/11 : ENV API_URL http://localhost:8000
+ ---> Running in ab4d036b81a0
+Removing intermediate container ab4d036b81a0
+ ---> ae3610a42c40
+Step 8/11 : EXPOSE 5000
+ ---> Running in d53606115102
+Removing intermediate container d53606115102
+ ---> 64e1688f88c1
+Step 9/11 : RUN whoami
+ ---> Running in 9d8e54c33ce3
+app
+Removing intermediate container 9d8e54c33ce3
+ ---> c05c592a5537
+Step 10/11 : ENTRYPOINT ["npm"]
+ ---> Running in e56c74294e56
+Removing intermediate container e56c74294e56
+ ---> a98cf0cb4e31
+Step 11/11 : CMD ["start"]
+ ---> Running in 470c38a69ca3
+Removing intermediate container 470c38a69ca3
+ ---> da8950c37f5f
+
+Successfully built da8950c37f5f
+Successfully tagged npm-frontend-3.4:latest
+Building backend
+Step 1/11 : FROM ubuntu:16.04
+ ---> dfeff22e96ae
+Step 2/11 : WORKDIR /mydir
+ ---> Using cache
+ ---> aeacdfeffdd9
+Step 3/11 : COPY backend-example-docker .
+ ---> Using cache
+ ---> e44072a7d80c
+Step 4/11 : RUN apt-get update && apt-get install -y curl && curl -sL https://deb.nodesource.com/setup_10.x | bash && apt-get install -y nodejs && npm install && useradd -m app
+ ---> Using cache
+ ---> 3146e4e27d44
+Step 5/11 : RUN chown -R app /mydir
+ ---> Running in 6fc639b9410c
+Removing intermediate container 6fc639b9410c
+ ---> 0d349c47fe6c
+Step 6/11 : USER app
+ ---> Running in f588fb153d33
+Removing intermediate container f588fb153d33
+ ---> e84b95dc2ae3
+Step 7/11 : ENV FRONT_URL http://localhost:5000
+ ---> Running in 15b503176ae2
+Removing intermediate container 15b503176ae2
+ ---> 65071fb88ab9
+Step 8/11 : EXPOSE 8000
+ ---> Running in ce3ab26128ff
+Removing intermediate container ce3ab26128ff
+ ---> a9ba4b2991ed
+Step 9/11 : RUN whoami
+ ---> Running in 5cd93a99f823
+app
+Removing intermediate container 5cd93a99f823
+ ---> 27652a0e5fad
+Step 10/11 : ENTRYPOINT ["npm"]
+ ---> Running in 11c00a584a68
+Removing intermediate container 11c00a584a68
+ ---> 0bd2bef6b868
+Step 11/11 : CMD ["start"]
+ ---> Running in 3bc0b06f6849
+Removing intermediate container 3bc0b06f6849
+ ---> d8f0f99ad595
+
+Successfully built d8f0f99ad595
+Successfully tagged npm-backend-3.4:latest
+exercise34_db_1 is up-to-date
+redis_container is up-to-date
+Creating frontend_container ... done
+Creating backend_container  ... done
+Recreating exercise34_proxy_1 ... done
+Attaching to exercise34_db_1, redis_container, backend_container, frontend_container, exercise34_proxy_1
+backend_container | 
+backend_container | > backend-example-docker@1.0.0 start /mydir
+backend_container | > node index.js

@@ -1,0 +1,11 @@
+I changed the USER for frontend and backend for Exercise 2.10.
+Frontend and Backend running as USER app.
+Check localhost, all buttons and sendinga and getting messages works.
+
+See step 9/11 in file usedCommands.
+Step 9/11 : RUN whoami
+ ---> Running in 9d8e54c33ce3
+app
+
+See the Dockerfiles in the folders frontend and backend.
+

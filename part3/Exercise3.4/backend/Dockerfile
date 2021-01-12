@@ -10,7 +10,6 @@ apt-get install -y nodejs && \
 npm install && \
 useradd -m app 
  
-#RUN chown app "$(pwd)" 
 RUN chown -R app /mydir
 USER app 
 

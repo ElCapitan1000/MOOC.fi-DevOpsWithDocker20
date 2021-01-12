@@ -1,6 +1,6 @@
 I changed the USER for frontend and backend for Exercise 2.10.
 Frontend and Backend running as USER app.
-Check localhost, all buttons and sendinga and getting messages works.
+Check localhost, all buttons and sending and getting messages works.
 
 See step 9/11 in file usedCommands.
 Step 9/11 : RUN whoami

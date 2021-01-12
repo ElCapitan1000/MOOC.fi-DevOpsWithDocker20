@@ -1,0 +1,12 @@
+The size for the frontend changed from 947MB to 328MB.
+The size for the backend changed from 344MB to 129MB.
+
+Check localhost, all buttons and sending and getting messages works.
+
+[ElCapitan@PC192 Exercise3.4]$ sudo docker image ls
+REPOSITORY                                        TAG                 IMAGE ID            CREATED             SIZE
+npm-backend-3.5                                   latest              2e304cf50881        3 minutes ago       129MB
+npm-frontend-3.5                                  latest              b3b921dd2ce9        10 minutes ago      328MB
+npm-backend-3.4                                   latest              292db16ccf51        About an hour ago   344MB
+npm-frontend-3.4                                  latest              8fb08e21fbd9        About an hour ago   947MB
+

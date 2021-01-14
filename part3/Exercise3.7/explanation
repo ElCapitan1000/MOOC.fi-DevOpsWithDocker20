@@ -1,0 +1,10 @@
+I continued to optimize the backend-example docker with a multi stage build.
+
+The image npm-backend-before-optimizations has a size of 129MB.
+The image npm-backend-after-optimizations has a size of 124MB.
+
+[ElCapitan@PC192 after]$ sudo docker images
+REPOSITORY                                        TAG                 IMAGE ID            CREATED             SIZE
+npm-backend-after-optimizations                   latest              d0ebca02fb50        17 seconds ago      124MB
+npm-backend-before-optimizations                  latest              1b7db566bcad        4 minutes ago       129MB
+

@@ -1,5 +1,5 @@
-I changed the USER for frontend and backend for Exercise 2.10.
-Frontend and Backend running as USER app.
+I changed the USER for the frontend and backend.
+frontend and backend running as USER app.
 Check localhost, all buttons and sending and getting messages works.
 
 See step 9/11 in file usedCommands.

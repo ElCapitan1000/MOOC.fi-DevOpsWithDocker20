@@ -1,0 +1,3 @@
+[ElCapitan@PC192 Exercise3.6]$ sudo docker build -t npm-frontend-3.6 .
+
+[ElCapitan@PC192 Exercise3.6]$ sudo docker run -it -p 5000:5000 npm-frontend-3.6

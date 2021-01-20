@@ -1,0 +1,26 @@
+For Exercise 3.2 i used the rails project from https://github.com/docker-hy/docker-hy.github.io. 
+This project is build by circleci and pushed to heroku. Check https://app-deploy-to-heroku.herokuapp.com/
+
+The link to the project and the config.yml is https://github.com/ElCapitan1000/app-deploy-to-heroku
+but you can see the config here:
+
+version: 2.1
+jobs:
+  deploy-heroku:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Build and push Docker image to Heroku
+          command: |
+            sudo curl https://cli-assets.heroku.com/install.sh | sh
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a app-deploy-to-heroku web
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a app-deploy-to-heroku web
+
+
+workflows:
+  deploy:
+    jobs:
+      - deploy-heroku
+
